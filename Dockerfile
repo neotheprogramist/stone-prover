@@ -39,11 +39,12 @@ RUN git clone -b v1.4.0 https://github.com/google/benchmark.git
 WORKDIR /tmp/benchmark
 RUN cmake CMakeLists.txt -DCMAKE_BUILD_TYPE=Release && make -j && make install
 
-COPY CMakeLists.txt /app/
-COPY src /app/src
-COPY e2e_test /app/e2e_test
+WORKDIR /app
 
-RUN mkdir -p /app/build/Release
+COPY CMakeLists.txt ./
+COPY src ./src
+
+RUN mkdir -p ./build/Release
 
 WORKDIR /app/build/Release
 
