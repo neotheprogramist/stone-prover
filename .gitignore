@@ -1,0 +1,7 @@
+**/.venv
+**/*_compiled.json
+**/*_public_input.json
+**/*_proof.json
+**/*_private_input.json
+**/*.bin
+**/*.x
