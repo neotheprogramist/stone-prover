@@ -57,5 +57,5 @@ RUN make -j8
 RUN ctest -V
 
 # Copy cpu_air_prover and cpu_air_verifier.
-RUN ln -s /app/build/Release/src/starkware/main/cpu/cpu_air_prover /bin/cpu_air_prover
-RUN ln -s /app/build/Release/src/starkware/main/cpu/cpu_air_verifier /bin/cpu_air_verifier
+RUN cp /app/build/Release/src/starkware/main/cpu/cpu_air_prover /bin/cpu_air_prover
+RUN cp /app/build/Release/src/starkware/main/cpu/cpu_air_verifier /bin/cpu_air_verifier

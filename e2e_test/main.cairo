@@ -16,7 +16,7 @@
 func main{
     output_ptr: felt*, pedersen_ptr: felt*, range_check_ptr: felt*, ecdsa_ptr: felt*,
     bitwise_ptr: felt*, ec_op_ptr: felt*, keccak_ptr: felt*, poseidon_ptr: felt*
-} -> () {
+}() -> () {
     alloc_locals;
 
     // Load fibonacci_claim_index and copy it to the output segment.
@@ -26,6 +26,7 @@ func main{
     assert output_ptr[0] = fibonacci_claim_index;
     let res = fib(1, 1, fibonacci_claim_index);
     assert output_ptr[1] = res;
+    let output_ptr = output_ptr + 2;
 
     // Return the updated output_ptr.
     return ();
